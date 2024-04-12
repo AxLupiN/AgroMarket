@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/main.css"/>
+    <link rel="stylesheet" href="css/browse.css"/>
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato&family=Roboto+Mono&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Lato&family=Roboto+Mono&display=swap"
+      rel="stylesheet"
+    />
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navitems">
+          <div class="nav-brand">
+            <h1 class="agromarket">Agro-Market</h1>
+            <img src = ""/>
+          </div>
+          <div class="nav-item-links">
+            <div class="navlink">
+              <a href="index.html">Home</a>
+            </div>
+            <div class="navlink">
+              <a href="browse.html">Browse</a>
+            </div>
+            <div class="navlink">
+              <a href="about.html">About</a>
+            </div>
+            <div class="navlink">
+              <a href="signup.html">Register</a>
+            </div>
+            <div class="navlink">
+              <a href="inquiry.html">Inquiries</a>
+            </div>
+            <div class="search-container">
+              <input class="search-bar" id="searchInput" type="search" placeholder="Search" />
+              <i class="bx bx-search-alt" style="color: #f5487f"></i>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div class="container">
+        <div class="filters">
+            <h2>Filters</h2>
+            <!-- Add your filter options here -->
+            <label for="category">Category:</label>
+            <select id="category">
+                <option value="all">All</option>
+                <option value="fruits">Fruits</option>
+                <option value="vegetables">Vegetables</option>
+                <!-- Add more options as needed -->
+            </select>
+        </div>
+        <div class="product-card">
+          <h3>Product Name</h3>
+          <p>Description of the product.</p>
+          <p>Price: $XX.XX</p>
+          <div class="quantity">
+              <button class="quantity-btn decrease">-</button>
+              <input type="number" class="quantity-input" value="1">
+              <button class="quantity-btn increase">+</button>
+          </div>
+          <button class="buy-button">Buy</button>
+          <button class="add-to-cart-button">Add to Cart</button>
+      </div>      
+    </div>
+
+    <script src="js/browse.js"></script>
+    <script>
+      // Retrieve search query parameter from URL and set it in the search input field
+      const urlParams = new URLSearchParams(window.location.search);
+      const searchQuery = urlParams.get('search');
+      if (searchQuery) {
+          document.getElementById('searchInput').value = decodeURIComponent(searchQuery);
+      }
+  </script>
+    
+</body>
+</html>

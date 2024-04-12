@@ -1,0 +1,35 @@
+
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.contact-method {
+    display: flex;
+    align-items: center;
+}
+
+.contact-method i {
+    margin-right: 10px;
+    font-size: 24px;
+}
+
+.contact-method p {
+    margin: 0;
+    font-size: 18px;
+}
+
+
+
+
+
+
+

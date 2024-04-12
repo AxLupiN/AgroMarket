@@ -1,0 +1,27 @@
+.about-message {
+  font-family: "Roboto Mono", monospace;
+  text-align: center; /* Aligning text to the center */
+  position: relative; /* Positioning context for absolutely positioned elements */
+  width: 100%;
+}
+
+.about-message img {
+  display: block; /* Make the image a block element to control positioning */
+  margin: 0 auto; /* Center the image horizontally */
+  max-width: 100%; /* Ensure the image doesn't exceed its container width */
+  height: 150vh; /* Maintain the image's aspect ratio */
+}
+
+.overlay-text {
+  position: absolute;
+  top: 10%;
+  text-align: center; /* Align text to center */
+  color: white; /* Text color */
+  font-family: "Roboto Mono", monospace;
+  font-size: 20px;
+  width: 100%;
+}
+.overlay-text h2{
+    color: #40c90e;
+    font-family: "Inconsolata", monospace;
+}

@@ -1,0 +1,56 @@
+/* body {
+  background-color: black;
+  margin: 0;
+  padding: 0;
+}
+.navbar {
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  height: 50px;
+  padding: 10px;
+}
+.navitems {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+.nav-brand {
+  width: 30%;
+}
+.nav-item-links {
+  display: flex;
+  width: 70%;
+}
+.navlink {
+  flex: 20%;
+
+  text-align: center;
+  font-family: "Lato", sans-serif;
+}
+.navlink a {
+  text-decoration: none;
+  color: white;
+}
+.agromarket {
+  font-family: "Roboto Mono", monospace;
+  text-align: left;
+  color: #40c90e;
+}
+.search-bar {
+  text-align: center;
+  border: none;
+}
+.search-container {
+  background-color: white;
+  border-radius: 10px;
+  display: flex;
+  padding: 5px;
+}
+.search-container input:focus{
+    border: none;
+    outline: none;
+} 
+
+ */

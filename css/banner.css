@@ -1,0 +1,60 @@
+/* .banner{
+    height: 80vh;
+    position: absolute;
+}
+
+
+.banner-image img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    position: relative;
+}  
+.banner-text{
+    position: absolute;
+    top: 30%;
+    left: 3%;
+    color: white;
+    object-fit: cover;   
+} 
+.banner-text{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center; /* Center align the text 
+}
+
+/* .banner-text h1{
+    width: 38%;
+    font-family: "Roboto Mono", monospace;
+}
+.banner-text h3{
+    color: #40c90e;
+    font-family: "Roboto Mono", monospace;
+}
+.banner-text p{
+    width: 38%;
+    text-align: justify;
+    line-height: 25px;
+    font-family: "Lato", sans-serif;
+}
+.banner-button{
+    padding-top: 35px;
+}
+.btn{
+    height: 40px;
+    width: 100px;
+    border-radius: 18px;
+    font-family: "Lato", sans-serif;
+}
+.watch-btn{
+    background-color: #40c90e;
+    color: white;
+}
+.detail-btn{
+    color:  #2A2C31;
+    margin-left: 15px;
+}
+ */ 
