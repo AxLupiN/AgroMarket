@@ -1,43 +1,108 @@
-let openShoppin = document.querySelector('.shoppin');
-let closeShoppin = document.querySelector('.closeShoppin');
-let list = document.querySelector('.ListCard');
-let body = document.querySelector('.body');
-let total = document.querySelector('.Total');
-let quantity = document.querySelector('.total');
+let openShopping = document.querySelector('.shopping');
+let closeShopping = document.querySelector('.closeShopping');
+let list = document.querySelector('.list');
+let listCard = document.querySelector('.listCard');
+let body = document.querySelector('body');
+let total = document.querySelector('.total');
+let quantity = document.querySelector('.quantity');
 
-openShoppin.addEventListener('click', ()=>{
+openShopping.addEventListener('click', ()=>{
     body.classList.add('active');
 })
-closeShoppin.addEventListener('click', ()=>{
+closeShopping.addEventListener('click', ()=>{
     body.classList.remove('active');
 })
+
 let products = [
     {
         id: 1,
-        name: 'Product Name 1',
-        image: '',
-        price: 100 
+        name: 'PRODUCT NAME 1',
+        image: '1.PNG',
+        price: 120000
     },
     {
         id: 2,
-        name: 'Product Name 2',
-        image: '',
-        price: 90
+        name: 'PRODUCT NAME 2',
+        image: '2.PNG',
+        price: 120000
     },
     {
         id: 3,
-        name: 'Product Name 3',
-        image: '',
-        price: 110 
+        name: 'PRODUCT NAME 3',
+        image: '3.PNG',
+        price: 220000
     },
     {
         id: 4,
-        name: 'Product Name 4',
-        image: '',
-        price: 143 
+        name: 'PRODUCT NAME 4',
+        image: '4.PNG',
+        price: 123000
+    },
+    {
+        id: 5,
+        name: 'PRODUCT NAME 5',
+        image: '5.PNG',
+        price: 320000
+    },
+    {
+        id: 6,
+        name: 'PRODUCT NAME 6',
+        image: '6.PNG',
+        price: 120000
     }
 ];
-let ListCard = [];
+let listCards  = [];
 function initApp(){
-    
+    products.forEach((value, key) =>{
+        let newDiv = document.createElement('div');
+        newDiv.classList.add('item');
+        newDiv.innerHTML = `
+            <img src="assets/image/${value.image}">
+            <div class="title">${value.name}</div>
+            <div class="price">${value.price.toLocaleString()}</div>
+            <button onclick="addToCard(${key})">Add To Card</button>`;
+        list.appendChild(newDiv);
+    })
+}
+initApp();
+function addToCard(key){
+    if(listCards[key] == null){
+        // copy product form list to list card
+        listCards[key] = JSON.parse(JSON.stringify(products[key]));
+        listCards[key].quantity = 1;
+    }
+    reloadCard();
+}
+function reloadCard(){
+    listCard.innerHTML = '';
+    let count = 0;
+    let totalPrice = 0;
+    listCards.forEach((value, key)=>{
+        totalPrice = totalPrice + value.price;
+        count = count + value.quantity;
+        if(value != null){
+            let newDiv = document.createElement('li');
+            newDiv.innerHTML = `
+                <div><img src="image/${value.image}"/></div>
+                <div>${value.name}</div>
+                <div>${value.price.toLocaleString()}</div>
+                <div>
+                    <button onclick="changeQuantity(${key}, ${value.quantity - 1})">-</button>
+                    <div class="count">${value.quantity}</div>
+                    <button onclick="changeQuantity(${key}, ${value.quantity + 1})">+</button>
+                </div>`;
+                listCard.appendChild(newDiv);
+        }
+    })
+    total.innerText = totalPrice.toLocaleString();
+    quantity.innerText = count;
+}
+function changeQuantity(key, quantity){
+    if(quantity == 0){
+        delete listCards[key];
+    }else{
+        listCards[key].quantity = quantity;
+        listCards[key].price = quantity * products[key].price;
+    }
+    reloadCard();
 }
